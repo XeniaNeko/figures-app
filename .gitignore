@@ -1,0 +1,6 @@
+node_modules
+dist
+logs
+_to_delete
+coverage
+.DS_Store

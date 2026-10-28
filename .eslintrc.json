@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": "./tsconfig.json" },
+  "extends": ["airbnb-base", "airbnb-typescript/base"],
+  "plugins": ["@typescript-eslint"],
+  "ignorePatterns": ["node_modules", "dist", "_to_delete", "jest.config.js"],
+  "env": { "node": true, "jest": true },
+  "rules": {
+    "class-methods-use-this": "off",
+    "import/extensions": "off"
+  }
+}
