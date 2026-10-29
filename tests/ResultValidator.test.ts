@@ -4,20 +4,20 @@ import ValidationError from '../src/errors/ValidationError';
 describe('ResultValidator', () => {
   const validator = new ResultValidator();
 
-  test('принимает положительный результат', () => {
+  test('accepts a positive result', () => {
     expect(validator.isValidMeasure(12.5)).toBe(true);
-    expect(validator.validateMeasure(12.5, 'площадь')).toBe(12.5);
+    expect(validator.validateMeasure(12.5, 'area')).toBe(12.5);
   });
 
-  test('отклоняет ноль, отрицательные и бесконечные значения', () => {
+  test('rejects zero, negative and infinite values', () => {
     expect(validator.isValidMeasure(0)).toBe(false);
     expect(validator.isValidMeasure(-1)).toBe(false);
     expect(validator.isValidMeasure(Infinity)).toBe(false);
     expect(validator.isValidMeasure(NaN)).toBeFalsy();
   });
 
-  test('бросает ValidationError для плохого результата', () => {
-    expect(() => validator.validateMeasure(0, 'объём')).toThrow(ValidationError);
-    expect(() => validator.validateMeasure(0, 'объём')).toThrow(/объём/);
+  test('throws ValidationError for a bad result', () => {
+    expect(() => validator.validateMeasure(0, 'volume')).toThrow(ValidationError);
+    expect(() => validator.validateMeasure(0, 'volume')).toThrow(/volume/);
   });
 });

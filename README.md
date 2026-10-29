@@ -1,22 +1,22 @@
-# Task I: Фигуры (вариант 3 — Овал, вариант 6 — Тетраэдр)
+# Task I: Shapes (variant 3 - Oval, variant 6 - Tetrahedron)
 
 TypeScript, Jest, ESLint (airbnb), pino.
 
-## Запуск
+## Run
 
 ```
 npm install --legacy-peer-deps
-npm start        # чтение data/*.txt, расчёты, логи в консоль и logs/app.log
-npm test         # unit-тесты
+npm start        # reads data/*.txt, calculates, logs to console and logs/app.log
+npm test         # unit tests
 npm run lint     # ESLint
 ```
 
-## Структура
+## Structure
 
-- `src/entities` — Point, Point3D, Shape, Oval, Tetrahedron (только данные)
-- `src/validators` — проверка исходных строк и результатов расчётов
-- `src/factories` — Factory Method (ShapeFactory, OvalFactory, TetrahedronFactory)
-- `src/services` — вычисления и чтение файла
-- `src/errors` — пользовательские исключения
-- `data` — входные файлы с частично некорректными строками
-- `tests` — тесты Jest
+- `src/entities` - Point, Point3D, Shape, Oval, Tetrahedron (data only)
+- `src/validators` - validation of input lines and calculation results
+- `src/factories` - Factory Method (ShapeFactory, OvalFactory, TetrahedronFactory)
+- `src/services` - calculations and file reading
+- `src/errors` - custom exceptions
+- `data` - input files with partly invalid lines
+- `tests` - Jest tests

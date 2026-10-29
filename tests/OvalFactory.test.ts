@@ -6,7 +6,7 @@ import ValidationError from '../src/errors/ValidationError';
 describe('OvalFactory', () => {
   const factory = new OvalFactory(new OvalValidator());
 
-  test('создаёт овал из корректной строки', () => {
+  test('creates an oval from a valid line', () => {
     const oval = factory.create('1.0 2.0 5.0 6.0', 'oval-1');
 
     expect(oval).toBeInstanceOf(Oval);
@@ -15,7 +15,7 @@ describe('OvalFactory', () => {
     expect(oval.pointB.y).toBe(6);
   });
 
-  test('пробрасывает ошибку для некорректной строки', () => {
+  test('propagates the error for an invalid line', () => {
     expect(() => factory.create('2a.0 3.0 4.1 5.0', 'oval-2')).toThrow(ValidationError);
     expect(() => factory.create('1.0 2.0', 'oval-3')).toThrow(ValidationError);
   });

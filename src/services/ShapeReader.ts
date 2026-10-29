@@ -20,7 +20,7 @@ export default class ShapeReader<T> {
     try {
       return readFileSync(path, 'utf-8');
     } catch {
-      throw new FileReadError(`Не удалось прочитать файл: ${path}`);
+      throw new FileReadError(`Failed to read file: ${path}`);
     }
   }
 
@@ -35,12 +35,12 @@ export default class ShapeReader<T> {
 
       try {
         shapes.push(this.factory.create(line, `${this.prefix}-${index + 1}`));
-        logger.info(`Строка ${index + 1}: фигура создана`);
+        logger.info(`Line ${index + 1}: shape created`);
       } catch (error) {
         if (error instanceof ValidationError) {
-          logger.warn(`Строка ${index + 1} пропущена: ${error.message}`);
+          logger.warn(`Line ${index + 1} skipped: ${error.message}`);
         } else {
-          logger.error(`Строка ${index + 1}: неожиданная ошибка`);
+          logger.error(`Line ${index + 1}: unexpected error`);
         }
       }
     });

@@ -8,14 +8,14 @@ import FileReadError from '../src/errors/FileReadError';
 describe('ShapeReader', () => {
   const ovalReader = new ShapeReader(new OvalFactory(new OvalValidator()), 'oval');
 
-  test('читает овалы и пропускает некорректные строки', () => {
+  test('reads ovals and skips invalid lines', () => {
     const ovals = ovalReader.readFile('data/ovals.txt');
 
     expect(ovals).toHaveLength(3);
     expect(ovals.map((oval) => oval.id)).toEqual(['oval-1', 'oval-4', 'oval-5']);
   });
 
-  test('читает тетраэдры и пропускает некорректные строки', () => {
+  test('reads tetrahedrons and skips invalid lines', () => {
     const reader = new ShapeReader(new TetrahedronFactory(new TetrahedronValidator()), 'tetra');
     const tetras = reader.readFile('data/tetrahedrons.txt');
 
@@ -23,7 +23,7 @@ describe('ShapeReader', () => {
     expect(tetras[0].vertices).toHaveLength(4);
   });
 
-  test('бросает FileReadError, если файла нет', () => {
+  test('throws FileReadError when the file is missing', () => {
     expect(() => ovalReader.readFile('data/missing.txt')).toThrow(FileReadError);
     expect(() => ovalReader.readFile('data/missing.txt')).toThrow(/missing\.txt/);
   });

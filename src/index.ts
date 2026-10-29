@@ -24,7 +24,7 @@ function logResults<T extends Shape>(shapes: T[], describe: (shape: T) => string
     try {
       logger.info(`${shape.id}: ${describe(shape)}`);
     } catch {
-      logger.warn(`${shape.id}: расчёт отклонён (некорректный результат)`);
+      logger.warn(`${shape.id}: calculation rejected (invalid result)`);
     }
   });
 }
@@ -34,10 +34,10 @@ try {
   const tetras = new ShapeReader(new TetrahedronFactory(new TetrahedronValidator()), 'tetra')
     .readFile(TETRAHEDRONS_FILE);
 
-  logResults(ovals, (oval) => `площадь=${measure(ovalCalculator.area(oval), 'площадь')}, `
-    + `периметр=${measure(ovalCalculator.perimeter(oval), 'периметр')}`);
-  logResults(tetras, (tetra) => `объём=${measure(tetraCalculator.volume(tetra), 'объём')}, `
-    + `площадь поверхности=${measure(tetraCalculator.surfaceArea(tetra), 'площадь поверхности')}`);
+  logResults(ovals, (oval) => `area=${measure(ovalCalculator.area(oval), 'area')}, `
+    + `perimeter=${measure(ovalCalculator.perimeter(oval), 'perimeter')}`);
+  logResults(tetras, (tetra) => `volume=${measure(tetraCalculator.volume(tetra), 'volume')}, `
+    + `surface area=${measure(tetraCalculator.surfaceArea(tetra), 'surface area')}`);
 } catch {
-  logger.error('Работа остановлена: файл с данными недоступен');
+  logger.error('Execution stopped: data file is unavailable');
 }

@@ -9,11 +9,11 @@ export default class TetrahedronValidator {
     const parts = line.trim().split(WHITESPACE_REGEX);
 
     if (parts.length !== TETRAHEDRON_PARAMS_COUNT) {
-      throw new ValidationError(`Нужно ${TETRAHEDRON_PARAMS_COUNT} чисел, получено ${parts.length}: "${line}"`);
+      throw new ValidationError(`Expected ${TETRAHEDRON_PARAMS_COUNT} numbers, got ${parts.length}: "${line}"`);
     }
 
     if (!parts.every((part) => NUMBER_REGEX.test(part))) {
-      throw new ValidationError(`Недопустимые символы в строке: "${line}"`);
+      throw new ValidationError(`Invalid characters in line: "${line}"`);
     }
 
     return parts.map(Number);

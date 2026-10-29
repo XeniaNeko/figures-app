@@ -10,7 +10,7 @@ describe('Tetrahedron', () => {
   const lifted = factory.create('1 1 1 2 1 1 1 2 1 1 1 2', 't2');
   const flat = factory.create('0 0 0 1 0 0 2 0 0 3 0 0', 't3');
 
-  test('отношение объёмов при рассечении плоскостью', () => {
+  test('volume ratio when cut by a plane', () => {
     const cut = factory.create('-1 0 0 1 0 0 1 1 0 1 0 1', 't4');
     const none = factory.create('1 1 1 2 1 1 1 2 1 1 1 2', 't5');
 
@@ -18,27 +18,27 @@ describe('Tetrahedron', () => {
     expect(calculator.volumeRatio(none, 'x')).toBeNull();
   });
 
-  test('объём и площадь поверхности', () => {
+  test('volume and surface area', () => {
     expect(calculator.volume(corner)).toBeCloseTo(1 / 6);
     expect(calculator.surfaceArea(corner)).toBeCloseTo(1.5 + Math.sqrt(3) / 2);
   });
 
-  test('является ли тетраэдром', () => {
+  test('is it a tetrahedron', () => {
     expect(calculator.isTetrahedron(corner)).toBe(true);
     expect(calculator.isTetrahedron(flat)).toBe(false);
   });
 
-  test('основание на координатной плоскости', () => {
+  test('base on a coordinate plane', () => {
     expect(calculator.isBaseOnCoordinatePlane(corner)).toBe(true);
     expect(calculator.isBaseOnCoordinatePlane(lifted)).toBe(false);
   });
 
-  test('плохие строки отклоняются', () => {
+  test('invalid lines are rejected', () => {
     expect(() => factory.create('1 2 3', 'x')).toThrow(ValidationError);
     expect(() => factory.create('0 0 0 1 0 0 0 1 0 0 0 1a', 'y')).toThrow(ValidationError);
   });
 
-  test('плоскость проходит через вершину или две вершины', () => {
+  test('plane passes through one or two vertices', () => {
     const oneOnPlane = factory.create('0 0 0 2 0 0 -1 1 0 -1 0 1', 't6');
     const twoOnPlane = factory.create('0 0 0 0 1 0 1 0 0 -1 0 1', 't7');
 
@@ -46,7 +46,7 @@ describe('Tetrahedron', () => {
     expect(calculator.volumeRatio(twoOnPlane, 'x')).toBeCloseTo(1);
   });
 
-  test('плоскость делит вершины 2 на 2', () => {
+  test('plane splits vertices 2 to 2', () => {
     const split = factory.create('-1 0 0 -2 1 0 1 0 0 1 0 3', 't8');
 
     expect(calculator.volumeRatio(split, 'x')).toBeGreaterThan(0);

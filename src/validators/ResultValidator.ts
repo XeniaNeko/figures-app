@@ -7,7 +7,7 @@ export default class ResultValidator {
 
   validateMeasure(value: number, name: string): number {
     if (!this.isValidMeasure(value)) {
-      throw new ValidationError(`Некорректный результат вычисления (${name}): ${value}`);
+      throw new ValidationError(`Invalid calculation result (${name}): ${value}`);
     }
 
     return value;
