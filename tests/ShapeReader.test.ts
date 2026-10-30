@@ -12,7 +12,7 @@ describe('ShapeReader', () => {
     const ovals = ovalReader.readFile('data/ovals.txt');
 
     expect(ovals).toHaveLength(3);
-    expect(ovals.map((oval) => oval.id)).toEqual(['oval-1', 'oval-4', 'oval-5']);
+    expect(ovals.map((oval) => oval.id)).toEqual(['oval-2', 'oval-8', 'oval-10']);
   });
 
   test('reads tetrahedrons and skips invalid lines', () => {
@@ -21,6 +21,7 @@ describe('ShapeReader', () => {
 
     expect(tetras).toHaveLength(3);
     expect(tetras[0].vertices).toHaveLength(4);
+    expect(tetras.map((tetra) => tetra.id)).toEqual(['tetra-2', 'tetra-8', 'tetra-10']);
   });
 
   test('throws FileReadError when the file is missing', () => {

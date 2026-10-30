@@ -1,5 +1,10 @@
+# Valid: base lies on the XY plane
 0 0 0 1 0 0 0 1 0 0 0 1
+# Invalid: too few numbers
 1 2 3
+# Invalid: letter in a number
 0 0 0 1 0 0 0 1 0 0 0 1a
+# Valid: cut by the YZ plane
 -1 0 0 1 0 0 1 1 0 1 0 1
+# Degenerate: all points on one line
 0 0 0 1 0 0 2 0 0 3 0 0

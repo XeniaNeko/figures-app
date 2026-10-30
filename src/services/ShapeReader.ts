@@ -5,6 +5,7 @@ import ValidationError from '../errors/ValidationError';
 import FileReadError from '../errors/FileReadError';
 
 const LINE_SEPARATOR_REGEX = /\r?\n/;
+const COMMENT_PREFIX = '#';
 
 export default class ShapeReader<T> {
   private readonly factory: ShapeFactory<T>;
@@ -29,7 +30,7 @@ export default class ShapeReader<T> {
     const lines = this.readContent(path).split(LINE_SEPARATOR_REGEX);
 
     lines.forEach((line, index) => {
-      if (line.trim() === '') {
+      if (line.trim() === '' || line.trim().startsWith(COMMENT_PREFIX)) {
         return;
       }
 

@@ -1,6 +1,12 @@
+# Valid: circle
 1.0 2.0 5.0 6.0
+# Invalid: letter in a number
 2a.0 3.0 4.1 5.0
+# Invalid: too few numbers
 1.0 2.0
+# Valid: circle at the origin
 0 0 4 4
+# Valid: oval that crosses only the Y axis
 -2.0 3.0 2.0 5.0
+# Invalid: two points on a line parallel to an axis
 1.0 2.0 1.0 6.0
