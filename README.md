@@ -14,9 +14,7 @@ npm run lint     # ESLint
 ## Structure
 
 - `src/entities` - Point, Point3D, Shape, Oval, Tetrahedron (data only)
-- `src/validators` - validation of input lines and calculation results
-- `src/factories` - Factory Method (ShapeFactory, OvalFactory, TetrahedronFactory)
-- `src/services` - calculations and file reading
+- `src/logic` - Factory Method (ShapeFactory, OvalFactory, TetrahedronFactory), validators, calculators and file reader
 - `src/errors` - custom exceptions
 - `data` - input files with partly invalid lines
 - `tests` - Jest tests

@@ -1,8 +1,8 @@
-import ShapeReader from '../src/services/ShapeReader';
-import OvalFactory from '../src/factories/OvalFactory';
-import OvalValidator from '../src/validators/OvalValidator';
-import TetrahedronFactory from '../src/factories/TetrahedronFactory';
-import TetrahedronValidator from '../src/validators/TetrahedronValidator';
+import ShapeReader from '../src/logic/ShapeReader';
+import OvalFactory from '../src/logic/OvalFactory';
+import OvalValidator from '../src/logic/OvalValidator';
+import TetrahedronFactory from '../src/logic/TetrahedronFactory';
+import TetrahedronValidator from '../src/logic/TetrahedronValidator';
 import FileReadError from '../src/errors/FileReadError';
 
 describe('ShapeReader', () => {

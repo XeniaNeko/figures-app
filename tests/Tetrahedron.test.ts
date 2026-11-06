@@ -1,6 +1,6 @@
-import TetrahedronCalculator from '../src/services/TetrahedronCalculator';
-import TetrahedronFactory from '../src/factories/TetrahedronFactory';
-import TetrahedronValidator from '../src/validators/TetrahedronValidator';
+import TetrahedronCalculator from '../src/logic/TetrahedronCalculator';
+import TetrahedronFactory from '../src/logic/TetrahedronFactory';
+import TetrahedronValidator from '../src/logic/TetrahedronValidator';
 import ValidationError from '../src/errors/ValidationError';
 
 describe('Tetrahedron', () => {

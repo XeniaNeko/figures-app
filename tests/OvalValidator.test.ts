@@ -1,4 +1,4 @@
-import OvalValidator from '../src/validators/OvalValidator';
+import OvalValidator from '../src/logic/OvalValidator';
 import ValidationError from '../src/errors/ValidationError';
 
 describe('OvalValidator', () => {

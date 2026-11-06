@@ -1,6 +1,6 @@
 import Point3D from '../entities/Point3D';
 import Tetrahedron from '../entities/Tetrahedron';
-import TetrahedronValidator from '../validators/TetrahedronValidator';
+import TetrahedronValidator from './TetrahedronValidator';
 import ShapeFactory from './ShapeFactory';
 
 export default class TetrahedronFactory implements ShapeFactory<Tetrahedron> {

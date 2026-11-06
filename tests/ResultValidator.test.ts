@@ -1,4 +1,4 @@
-import ResultValidator from '../src/validators/ResultValidator';
+import ResultValidator from '../src/logic/ResultValidator';
 import ValidationError from '../src/errors/ValidationError';
 
 describe('ResultValidator', () => {

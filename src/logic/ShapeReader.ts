@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import logger from '../logger';
-import ShapeFactory from '../factories/ShapeFactory';
+import ShapeFactory from './ShapeFactory';
 import ValidationError from '../errors/ValidationError';
 import FileReadError from '../errors/FileReadError';
 

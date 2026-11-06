@@ -1,5 +1,5 @@
-import OvalFactory from '../src/factories/OvalFactory';
-import OvalValidator from '../src/validators/OvalValidator';
+import OvalFactory from '../src/logic/OvalFactory';
+import OvalValidator from '../src/logic/OvalValidator';
 import Oval from '../src/entities/Oval';
 import ValidationError from '../src/errors/ValidationError';
 

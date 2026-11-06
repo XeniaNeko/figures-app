@@ -1,6 +1,6 @@
 import Oval from '../entities/Oval';
 import Point from '../entities/Point';
-import OvalValidator from '../validators/OvalValidator';
+import OvalValidator from './OvalValidator';
 import ShapeFactory from './ShapeFactory';
 
 export default class OvalFactory implements ShapeFactory<Oval> {

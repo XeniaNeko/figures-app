@@ -1,4 +1,4 @@
-import OvalCalculator from '../src/services/OvalCalculator';
+import OvalCalculator from '../src/logic/OvalCalculator';
 import Oval from '../src/entities/Oval';
 import Point from '../src/entities/Point';
 
